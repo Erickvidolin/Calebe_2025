@@ -13,6 +13,9 @@ module.exports = {
         'custom': ['"NomeDaFonte"', 'serif'], // Para fontes personalizadas
       },
 
+      screens: {
+        'custom': '425px', // Cria um breakpoint chamado 'custom' para telas maiores que 1440px
+      },
 
     },
 
