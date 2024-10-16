@@ -10,54 +10,42 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
 
 </head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-W0J0HS40MS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-W0J0HS40MS');
-</script>
-<body class="bg-gray-800  flex flex-col text-center">
+<body class="bg-gray-800  flex flex-col py-16 text-center">
     <div class="bg-orange-600 max-w-lg m-auto w-full rounded-lg shadow-md shadow-black p-2">
         <header class="bg-orange-600 m-auto w-full h-20 flex justify-center space-x-10">
             <img class="w-24 " src="src/img/logo_novo_tempo-removebg-preview.png" alt="">
             <img class="w-24 " src="src/img/LogoMissaoCalebe.png" alt="">
         </header>
-        <div class="w-12/12 h-full py-5">
-            <div class="relative w-full" style="padding-bottom: 56.25%;">
-                <iframe class="rounded-lg absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/jtaFMy0VvPQ?si=5poNrws4ocPZuHnY" 
-                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe>
+        <div class="w-12/12 h-full py-5 felx">
+            <div class="relative w-full rounded-md bg-slate-900">
+                <video class="m-auto w-6/12" src="src/img/VID-20241015-WA0029.mp4" controls></video>
             </div>
         </div>
         <div class="flex flex-col w-full gap-5">
             <h2 class="text-white font-bold text-xl md:text-2xl font-roboto">Quer conhecer mais sobre a bíblia ?</h2>
-            <a href="adv.st/queroestudar" class="m-auto w-10/12 md:w-8/12">
-                <button class="bg-orange-500 p-1 shadow-md rounded-lg shadow-black w-full flex">
+            
+                <button id="estudar" class="bg-orange-500 p-2 shadow-md rounded-lg shadow-black flex m-auto w-10/12 md:w-8/12">
                     <img class="w-8 ml-3 custom:ml-5" src="src/img/whatsapp.png" alt="">
                     <p class="m-auto text-sm custom:text-md md:text-md  text-white font-bold">Fale com a Esperança</p>
                 </button>
-            </a>
+            
             <h2 class="text-white font-bold text-md custom:text md:text-xl">Conheça alguns de nossos canais :</h2>
             <h2 class="text-white font-bold text-md md:text-xl">Pelo Youtube</h2>
             <a href="https://www.youtube.com/@novotempo" class="m-auto w-10/12 md:w-8/12">
-                <button class="bg-orange-500 p-1 shadow-md rounded-lg shadow-black w-full flex">
+                <button class="bg-orange-500 p-2 shadow-md rounded-lg shadow-black w-full flex">
                     <img class="w-10 custom:ml-5 ml-3 -mr-3" src="src/img/youtube.png" alt="">
                     <p class="m-auto text-sm custom:text-md text-white font-bold">Rede Novo Tempo</p>
                 </button> 
             </a>
             <a href="https://www.youtube.com/@GravadoraNT" class="m-auto w-10/12 md:w-8/12">
-                <button class="bg-orange-500 p-1 shadow-md rounded-lg shadow-black w-full flex">
+                <button class="bg-orange-500 p-2 shadow-md rounded-lg shadow-black w-full flex">
                     <img class="w-10 custom:ml-5 ml-3" src="src/img/youtube.png" alt="">
                     <p class="m-auto text-sm md:text-md text-white font-bold">Gravadora Novo Tempo</p>
                 </button>
             </a>
             <h2 class="text-white font-bold text-md md:text-xl">Pelo rádio</h2>
             <a href="https://www.novotempo.com/radioaovivo/" class="m-auto w-10/12 md:w-8/12">
-                <button class="bg-orange-500 p-1 shadow-md rounded-lg shadow-black w-full flex">
+                <button class="bg-orange-500 p-2 shadow-md rounded-lg shadow-black w-full flex">
                     <img class="w-8 custom:ml-5 ml-3" src="src/img/radio.png" alt="">
                     <p class="m-auto text-sm md:text-md text-white font-bold w-auto">Rádio Novo Tempo Online</p>  
                 </button>
@@ -75,7 +63,7 @@
                     </div>
                 </div>
                 <div class="w-12/12">
-                    <h2 class="mb-3 text-white font-bold text-center text-lg">Estaçoes de Rádio</h2>
+                    <h2 class="mb-3 text-white font-bold text-center text-lg">Estação de Rádio</h2>
                     <div class="flex text-md text-center text-white gap-5 justify-center pb-5">
                         <p class="">Curitiba <br> 106,5 MHz</p>
                     </div>
@@ -84,5 +72,23 @@
             <div class="h-16 flex pt-5 mt-5"><p class="text-center m-auto text-white font-bold">&copy;SevenWebs</p></div>
         </footer>
     </div>
+    <script>
+        document.getElementById('estudar').addEventListener('click', function() {
+            const numeroWhatsApp = '+5512982000062'; // Coloque o número desejado
+            const mensagem = 'Olá, estou interessado em estudar!'; // Mensagem padrão
+
+            // Verifica se é um dispositivo móvel
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            let url;
+
+            if (isMobile) {
+                url = `whatsapp://send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensagem)}`;
+            } else {
+                url = `https://web.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensagem)}`;
+            }
+
+            window.location.href = url;
+        });
+    </script>
 </body>
 </html>
